@@ -1,0 +1,33 @@
+<h5><p>consultar-produtos works!</p></h5>
+<p>Listagem de Produtos Cadastrados</p>
+
+<table class="table table-over table-sm">
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td>Preço</td>
+      <td>Quantidade</td>
+      <td>Total</td>
+      <td>Descrição</td>
+      <td>Operações</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of produtos">
+      <td>{{p.nome}}</td>
+      <td>{{p.preco | currency: 'R$ '}}</td>
+      <td>{{p.qtd}}</td>
+      <td>{{p.preco*p.qtd | currency: 'R$ '}}</td>
+      <td>{{p.descricao}}</td>
+      <td>
+        <button class="btn btn-primary">Editar</button>&nbsp;
+        <button class="btn btn-danger">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6">Total de Registros: {{produtos.length}}</td>
+    </tr>
+  </tfoot>
+</table>
