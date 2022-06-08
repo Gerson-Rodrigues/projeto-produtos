@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-consultar-produtos',
@@ -15,14 +16,24 @@ export class ConsultarProdutosComponent implements OnInit {
 
   //Método executa quando o componente é aberto
   ngOnInit(): void {
-    this.httpClient.get('http://localhost:8090/api/produtos').subscribe(
-      (data)=> {
-        this.produtos = data as any[];
+    this.httpClient.get(environment.apiUrl+'/produtos').subscribe(
+      (data)=> {this.produtos = data as any[];
       },
-      (e) => {
-        console.log(e);
-      }
-      )
+      (e) => {console.log(e)}
+    )
   }//fecha o método onInit
+
+  //função pra fazer a exclusão do produto na API
+
+  excluir(idproduto:number):void {
+    if(window.confirm('Deseja realmente excluir o produto selecionado???')){
+      this.httpClient.delete(environment.apiUrl+'/produtos/'+idproduto,
+      {responseType: 'text'}).subscribe((data)=> {
+        alert (data);      //exibir mensagem em uma janela popup
+        this.ngOnInit();   //recarregar a consulta de produtos
+      },
+      (e)=>{ console.log(e)})
+    }
+  }
 
 }
