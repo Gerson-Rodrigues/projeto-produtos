@@ -1,14 +1,14 @@
-<h1><i class="text-bg-light">Olá, Gerson Rodrigues     .</i></h1>
+<h1><i class="text-bg-light">.    Olá, Gerson Rodrigues     .</i></h1>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Barra de Navegação</a>
+    <a class="navbar-brand " href="#">Barra de Navegação</a>
     <button class="navbar-toggler bg-warning p-2 text-dark bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/account']"><strong>Autenticar Usuário</strong></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/Gerson-Rodrigues/projeto-produtos">Meu GitHub</a>
@@ -19,6 +19,7 @@
             <li><a class="dropdown-item" routerLink="cadastrar-produtos"><div class="bg-success p-2 text-dark bg-opacity-25">Cadastrar</div></a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" routerLink="consultar-produtos"><div class="bg-secondary p-2 text-dark bg-opacity-25">Consultar</div></a></li>
+            
           </ul>
         </li>
       </ul>
@@ -32,5 +33,5 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  
+
 </div>

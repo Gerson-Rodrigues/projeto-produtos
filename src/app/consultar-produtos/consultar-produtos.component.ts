@@ -35,5 +35,11 @@ export class ConsultarProdutosComponent implements OnInit {
       (e)=>{ console.log(e)})
     }
   }
+  key: string = 'nome'; // Define um valor padrão, para quando inicializar o componente
+    reverse: boolean = false;
+    sort(key: string) {
+        this.key = key;
+        this.reverse = !this.reverse;
+    }
 
 }

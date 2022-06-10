@@ -4,8 +4,7 @@
 <table class="table table-over table-sm">
   <thead>
     <tr>
-      <!--<td>ID</td>-->
-      <td>Nome</td>
+      <td>Nome
       <td>Preço</td>
       <td>Quantidade</td>
       <td>Total</td>
@@ -15,7 +14,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let p of produtos">
-      <!--<td>{{p.idProduto}}</td>-->
+
       <td>{{p.nome}}</td>
       <td>{{p.preco | currency: 'R$ '}}</td>
       <td>{{p.qtd}}</td>
