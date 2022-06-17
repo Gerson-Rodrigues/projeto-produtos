@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-consultar-produtos',
@@ -17,9 +17,9 @@ export class ConsultarProdutosComponent implements OnInit {
   //Método executa quando o componente é aberto
   ngOnInit(): void {
     this.httpClient.get(environment.apiUrl+'/produtos').subscribe(
-      (data)=> {this.produtos = data as any[];
+      data=> {this.produtos = data as any[];
       },
-      (e) => {console.log(e)}
+      e => {console.log(e)}
     )
   }//fecha o método onInit
 

@@ -1,10 +1,11 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { OrderModule } from 'ngx-order-pipe';
 
+import { TokenInterceptor } from './_interceptor/tokenInterceptor';
 import { AccountComponent } from './account/account.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path: 'consultar-produtos', component: ConsultarProdutosComponent},
   {path: 'editar-produtos/:id', component: EditarProdutosComponent},
   {path: 'account', component: AccountComponent},
-  {path: 'login', component: LoginComponent}
+  {path: '', component: LoginComponent}//pagina inicial
 ]
 @NgModule({
   declarations: [
@@ -38,7 +39,14 @@ const routes: Routes = [
     ReactiveFormsModule,
     OrderModule
   ],
-  providers: [],
+  providers: [
+    {
+      //Configuração do uso do interceptor
+      provide: HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

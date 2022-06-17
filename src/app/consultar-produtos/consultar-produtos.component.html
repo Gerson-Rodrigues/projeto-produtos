@@ -1,34 +1,37 @@
-<h4><strong>Consulta de Produtos</strong></h4>
-<Strong><p>Listagem de Produtos Cadastrados</p></Strong>
+<div class="body">
+  <h2><strong>Consulta de Produtos</strong></h2>
+  <hr>
+  <Strong><p>Listagem de Produtos Cadastrados</p></Strong>
 
-<table class="table table-over table-sm">
-  <thead>
-    <tr>
-      <td>Nome
-      <td>Preço</td>
-      <td>Quantidade</td>
-      <td>Total</td>
-      <td>Descrição</td>
-      <td>Operações</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of produtos">
+  <table class="table table-over table-sm text-light">
+    <thead>
+      <tr>
+        <td>Nome</td>
+        <td>Preço</td>
+        <td>Quantidade</td>
+        <td>Total</td>
+        <td>Descrição</td>
+        <td>Operações</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of produtos">
 
-      <td>{{p.nome}}</td>
-      <td>{{p.preco | currency: 'R$ '}}</td>
-      <td>{{p.qtd}}</td>
-      <td>{{p.preco*p.qtd | currency: 'R$ '}}</td>
-      <td>{{p.descricao}}</td>
-      <td>
-        <button class="btn btn-outline-success p-2 opacity-100"  [routerLink]="['/editar-produtos',p.idProduto]">Editar</button>&nbsp;
-        <button class="btn btn-outline-danger p-2 opacity-100" (click)="excluir(p.idProduto)">Excluir</button>
-      </td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="6">Total de Registros: {{produtos.length}}</td>
-    </tr>
-  </tfoot>
-</table>
+        <td>{{p.nome}}</td>
+        <td>{{p.preco | currency: 'R$ '}}</td>
+        <td>{{p.qtd}}</td>
+        <td>{{p.preco*p.qtd | currency: 'R$ '}}</td>
+        <td>{{p.descricao}}</td>
+        <td>
+          <button class="btn btn-outline-success p-2 opacity-100"  [routerLink]="['/editar-produtos',p.idProduto]">Editar</button>&nbsp;
+          <button class="btn btn-outline-danger p-2 opacity-100" (click)="excluir(p.idProduto)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">Total de Registros: {{produtos.length}}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

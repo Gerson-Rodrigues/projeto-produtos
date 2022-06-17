@@ -1,7 +1,9 @@
-<h4><p>Cadastro de Produtos</p></h4>
 
-<form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
-  <div *ngIf="mensagem" class="mb-3 alert alert-primary">
+<form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" class="body">
+
+<h4><p>Cadastro de Produtos</p></h4>
+<hr><br/><br/>
+  <div *ngIf="mensagem" class="mb-3 alert alert-success">
     <strong>{{ mensagem }}</strong>
     </div>
   <div class="row mb-3">
@@ -59,9 +61,8 @@
       <input
         type="submit"
         [disabled]="!formCadastro.valid"
-        class="btn btn-outline-success"
-        value="Realizar Cadastro"
-      />
+        class="btn btn-outline-light"
+        value="Realizar Cadastro"/>
     </div>
   </div>
 </form>

@@ -4,13 +4,14 @@
 <form [formGroup]="formEdicao" (ngSubmit)="onEdit()">
 
   <div *ngIf="mensagem" class="mb-3 alert alert-outline-primary opacity-100">
-    <strong>{{ mensagem }}</strong></div>
-  
-    <div class="row mb-3">
-    <div class="col-md-2"><label>Identificador</label>
-      <input type="text" formControlName="idProduto" readonly/></div>
-    </div>
-    <div class="row mb-3">
+    <strong>{{ mensagem }}</strong>
+  </div>
+
+  <div class="row mb-3">
+  <div class="col-md-2"><label>Identificador</label>
+    <input type="text" formControlName="idProduto" readonly/></div>
+  </div>
+  <div class="row mb-3">
     <div class="col-md-6">
       <label>Nome do Produto</label>
       <input type="text" class="form-control" formControlName="nome" />
@@ -60,5 +61,5 @@
         value="Atualizar" />
     </div>
   </div>
-  
+
 </form>

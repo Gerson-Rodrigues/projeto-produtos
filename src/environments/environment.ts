@@ -5,4 +5,4 @@ export const environment = {
   apiUrl:'http://localhost:8090/api'
 };
 
-//Vamos . . . . Modificar os componentsde cadastro e consulta dos produtos
+//Vamos . . . . Modificar os components de cadastro e consulta dos produtos
